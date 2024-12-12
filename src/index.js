@@ -1,11 +1,56 @@
+// require('dotenv').config({ path: './env' })
 
-import express from "express"
-const app = express();
+import mongoose from "mongoose";
+import { DB_NAME } from "./constants.js";
+import connectDB from "./db/index.js";
+import dotenv from "dotenv";
+dotenv.config({
+    ptha: "./env"
+})
+
+connectDB();
 
 
-app.get("/", (req, res) => {
 
-    res.send("jai ho b");
-});
 
-app.listen(3000, () => "host is listing on port 3000");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import express from "express";
+// const app = express();
+// //efis function ready karke turant run karo
+// ; (async () => {
+//     try {
+//         await mongoose.connect(`${process.env.MONOGODB_URI}/${DB_NAME}`)
+//         app._router.on("error", () => {
+//             console.log("Err", error);
+//             throw error
+//         })
+
+//         app.listen(process.env.PORT, () => {
+//             console.log(`App is listening o port ${process.env.PORT}`)
+//         })
+//     } catch (error) {
+//         console.error("Error:", error)
+//     }
+// })()
